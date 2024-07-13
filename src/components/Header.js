@@ -29,7 +29,7 @@ const Header = () => {
             <Button variant="link" className="text-white p-0 me-2" href="https://www.instagram.com/verodipsybeads?igsh=YzljYTk1ODg3Zg==">
               <FontAwesomeIcon icon={faInstagram} size="lg" />
             </Button>
-            <Button variant="link" className="text-white p-0" href="https://www.tiktok.com/Verodipsybeads">
+            <Button variant="link" className="text-white p-0" href=" https://www.tiktok.com/@veronicaosita">
               <FontAwesomeIcon icon={faTiktok} size="lg" />
             </Button>
           </div>

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { getHeroContent, createHeroContent, updateHeroContent, deleteHeroContent } from '../services/api'; 
+import { getHeroContent } from '../services/api'; 
+import '../styles/Hero.css'; // Import your custom CSS
 
 const Hero = () => {
   const [heroContent, setHeroContent] = useState({});
@@ -24,62 +25,26 @@ const Hero = () => {
     }
   };
 
-  const handleCreate = async (data) => {
-    try {
-      const response = await createHeroContent(data);
-      setHeroContent(response.data);
-    } catch (error) {
-      console.error('Error creating hero content:', error);
-    }
-  };
-
-  const handleUpdate = async (id, data) => {
-    try {
-      const response = await updateHeroContent(id, data);
-      setHeroContent(response.data);
-    } catch (error) {
-      console.error('Error updating hero content:', error);
-    }
-  };
-
-  const handleDelete = async (id) => {
-    try {
-      await deleteHeroContent(id);
-      setHeroContent({});
-    } catch (error) {
-      console.error('Error deleting hero content:', error);
-    }
-  };
-
   if (isLoading) {
     return <div>Loading...</div>;
   }
 
   return (
     <div
-      className="container-fluid d-flex flex-column justify-content-center align-items-center text-center text-white"
+      className="hero-container d-flex flex-column justify-content-center align-items-center text-center text-white"
       style={{
-        position: 'relative',
-        height: '80vh',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
         backgroundImage: `url(${heroContent.background_image})`,
-        padding: '0 1rem',
       }}
     >
-      <div className="row justify-content-center align-items-center h-100">
-        <div className="col-12 col-md-8">
-          <h1 className="display-4 font-weight-bold mb-3">
-            {heroContent.headline}
-          </h1>
-          <h2 className="h5 mb-4">
-            {heroContent.subheadline}
-          </h2>
-          {/* Uncomment the button below if needed */}
-          {/* <Button variant="success" size="lg">
-            Shop Now
-          </Button> */}
-        </div>
+      <div className="hero-overlay" />
+      <div className="hero-content">
+        <h1 className="display-4 font-weight-bold mb-3 animate__animated animate__fadeInDown">
+          {heroContent.headline}
+        </h1>
+        <h2 className="h5 mb-4 animate__animated animate__fadeInUp">
+          {heroContent.subheadline}
+        </h2>
+        
       </div>
     </div>
   );

@@ -1,0 +1,37 @@
+.hero-container {
+    position: relative;
+    height: 80vh; /* Default height */
+    background-size: cover; /* Cover the container */
+    background-position: center; /* Center the image */
+    padding: 0 1rem;
+    overflow: hidden; /* Prevent overflow */
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for contrast */
+    z-index: 1;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2; /* Ensures content is above the overlay */
+  }
+  
+  button {
+    transition: background-color 0.3s ease;
+  }
+  
+  
+  @media (max-width: 768px) {
+    .hero-container {
+      height: auto; /* Full viewport height on smaller screens */
+      background-size: cover; /* Ensure full coverage */
+      background-repeat: no-repeat; /* Prevent duplication */
+    }
+  }
+  

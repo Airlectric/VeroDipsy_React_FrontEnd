@@ -1,0 +1,25 @@
+.explore-title {
+    font-size: 2.5rem; /* Larger font size */
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #2b4c72; /* Change this to your preferred color */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+  }
+  
+  .explore-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #374981; /* Underline color */
+    margin: 0.5rem auto;
+  }
+  
+  .explore-subtitle {
+    font-size: 1.2rem; /* Subtitle size */
+    color: #666; /* Subtitle color */
+    margin-bottom: 2rem;
+  }
+  

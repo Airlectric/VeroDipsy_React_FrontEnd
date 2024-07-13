@@ -15,7 +15,7 @@ const Footer = () => {
           {/* Add social media links */}
           <a href="https://www.facebook.com/veronicaositasiakie24" className="text-white me-2">Facebook</a>
           <a href="https://www.instagram.com/verodipsybeads?igsh=YzljYTk1ODg3Zg==" className="text-white me-2">Instagram</a>
-          <a href="https://www.tiktok.com/Verodipsybeads" className="text-white">TikTok</a>
+          <a href=" https://www.tiktok.com/@veronicaosita" className="text-white">TikTok</a>
         </div>
       </div>
     </footer>
