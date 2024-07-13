@@ -44,7 +44,7 @@ const ContactUs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://127.0.0.1:8000/api/contact/', formData);
+      const response = await axios.post('https://verosiake.pythonanywhere.com/api/contact/', formData);
       console.log('Message sent:', response.data);
       // Clear form
       setFormData({ name: '', email: '', message: '' });
