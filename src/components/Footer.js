@@ -9,7 +9,7 @@ const Footer = () => {
     }}>
       <div className="row justify-content-center">
         <div className="col-12 col-md-6 text-center text-md-left">
-          &copy; 2024 Verosy Beads and Clothing. All rights reserved.
+          &copy; 2024 Verodipsy Beads and Clothing. All rights reserved.
         </div>
         <div className="col-12 col-md-6 text-center text-md-right">
           {/* Add social media links */}

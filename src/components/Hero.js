@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Spinner } from 'react-bootstrap';
 import { getHeroContent } from '../services/api'; 
-import '../styles/Hero.css'; // Import your custom CSS
+import '../styles/Hero.css';
 
 const Hero = () => {
   const [heroContent, setHeroContent] = useState({});
@@ -26,9 +26,15 @@ const Hero = () => {
   };
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="d-flex justify-content-center align-items-center" style={{ height: '80vh' }}>
+        <Spinner animation="border" role="status">
+          <span className="sr-only">Loading...</span>
+        </Spinner>
+      </div>
+    );
   }
-
+  
   return (
     <div
       className="hero-container d-flex flex-column justify-content-center align-items-center text-center text-white"
