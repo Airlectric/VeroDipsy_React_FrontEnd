@@ -1,18 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import ProductCard from '../components/ProductCard';
-import { Grid } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import { Container, Row, Col } from 'react-bootstrap';
 import { getProducts } from '../services/api';
-
-const useStyles = makeStyles({
-  root: {
-    flexGrow: 1,
-    padding: '2rem',
-  },
-});
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Products = () => {
-  const classes = useStyles();
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -20,16 +12,16 @@ const Products = () => {
   }, []);
 
   return (
-    <div className={classes.root}>
-      <Grid container spacing={3}>
+    <Container className="py-4"  >
+      <Row>
         {products.map(product => (
-          <Grid item xs={12} sm={6} md={4} key={product.id}>
+          <Col xs={12} sm={6} md={4} key={product.id} className="mb-4">
             <ProductCard product={product} />
-          </Grid>
+          </Col>
         ))}
-      </Grid>
-    </div>
+      </Row>
+    </Container>
   );
-}
+};
 
 export default Products;

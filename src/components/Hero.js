@@ -1,43 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Typography } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { getHeroContent, createHeroContent, updateHeroContent, deleteHeroContent } from '../services/api'; 
 
-const useStyles = makeStyles((theme) => ({
-  hero: {
-    position: 'relative',
-    height: '80vh',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
-    color: '#fff',
-    textAlign: 'center',
-    padding: '0 1rem',
-  },
-  headline: {
-    fontSize: '2.5rem',
-    fontWeight: 'bold',
-    marginBottom: '1rem',
-  },
-  subheadline: {
-    fontSize: '1.25rem',
-    marginBottom: '2rem',
-  },
-  ctaButton: {
-    backgroundColor: '#4CAF50',
-    color: '#fff',
-    '&:hover': {
-      backgroundColor: '#45A049',
-    }
-  }
-}));
-
 const Hero = () => {
-  const classes = useStyles();
   const [heroContent, setHeroContent] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
@@ -91,19 +57,26 @@ const Hero = () => {
 
   return (
     <div
-      className={`${classes.hero} container-fluid`}
-      style={{ backgroundImage: `url(${heroContent.background_image})` }}
+      className="container-fluid d-flex flex-column justify-content-center align-items-center text-center text-white"
+      style={{
+        position: 'relative',
+        height: '80vh',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundImage: `url(${heroContent.background_image})`,
+        padding: '0 1rem',
+      }}
     >
       <div className="row justify-content-center align-items-center h-100">
         <div className="col-12 col-md-8">
-          <Typography variant="h3" className={classes.headline}>
+          <h1 className="display-4 font-weight-bold mb-3">
             {heroContent.headline}
-          </Typography>
-          <Typography variant="h5" className={classes.subheadline}>
+          </h1>
+          <h2 className="h5 mb-4">
             {heroContent.subheadline}
-          </Typography>
+          </h2>
           {/* Uncomment the button below if needed */}
-          {/* <Button variant="contained" className={classes.ctaButton}>
+          {/* <Button variant="success" size="lg">
             Shop Now
           </Button> */}
         </div>

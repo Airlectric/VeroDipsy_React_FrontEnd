@@ -1,29 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Typography, Grid, Paper } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import { Container, Row, Col, Card } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { getAboutUsContent } from '../services/api';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    padding: theme.spacing(2),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-  },
-  image: {
-    maxWidth: '100%',
-    height: 'auto',
-    display: 'block',
-    margin: '0 auto',
-  },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: "center",
-    color: theme.palette.text.secondary,
-  },
-}));
-
 const AboutUs = () => {
-  const classes = useStyles();
   const [content, setContent] = useState(null);
 
   useEffect(() => {
@@ -33,25 +13,29 @@ const AboutUs = () => {
   if (!content) return null;
 
   return (
-    <div className={classes.root}>
-      <Grid container spacing={3}>
-        <Grid item xs={12} md={6}>
-          <Paper className={classes.paper}>
-            <Typography variant="h4" gutterBottom>{content.title}</Typography>
-            <Typography variant="body1">{content.content}</Typography>
-          </Paper>
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <Paper className={classes.root}>
-            <img
+    <Container className="my-4 text-center "  style={{ minHeight: 'calc(100vh - 100px)', position: 'relative' }}>
+      <Row>
+        <Col xs={12} md={6} className="mb-4">
+          <Card className="h-100">
+            <Card.Body>
+              <Card.Title as="h4">{content.title}</Card.Title>
+              <Card.Text>{content.content}</Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col xs={12} md={6}>
+          <Card className="h-100">
+            <Card.Img
+              variant="top"
               src={content.image}
               alt={content.title}
-              className={classes.image}
+              className="img-fluid"
+              style={{ maxHeight: '400px', objectFit: 'cover' }}
             />
-          </Paper>
-        </Grid>
-      </Grid>
-    </div>
+          </Card>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 

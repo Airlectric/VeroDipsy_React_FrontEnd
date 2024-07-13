@@ -2,21 +2,11 @@ import React, { useState, useEffect } from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { makeStyles } from '@material-ui/core/styles';
 import { getLookbookImages } from '../services/api';
-
-const useStyles = makeStyles({
-  root: {
-    margin: "2rem 0",
-  },
-  image: {
-    width: "100%",
-    height: "auto",
-  },
-});
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../styles/LookbookCarousel.css'; // Create a separate CSS file for styling
 
 const LookbookCarousel = () => {
-  const classes = useStyles();
   const [images, setImages] = useState([]);
 
   useEffect(() => {
@@ -34,14 +24,14 @@ const LookbookCarousel = () => {
   };
 
   return (
-    <div className={`${classes.root} container`}>
+    <div className="carousel-container">
       <Slider {...settings}>
         {images.map(image => (
           <div key={image.id}>
             <img
               src={image.image}
               alt={image.caption}
-              className={classes.image}
+              className="carousel-image"
             />
           </div>
         ))}

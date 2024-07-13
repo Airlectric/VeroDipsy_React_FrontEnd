@@ -1,0 +1,15 @@
+/* Footer.css */
+.footer {
+    background: linear-gradient(90deg, rgb(6, 28, 68) 0%, rgba(52, 154, 185, 0.8) 100%);
+    color: white;
+    padding: 1rem 0; /* Adjust padding as needed */
+  }
+  
+  .footer .social-icon {
+    margin: 0 0.5rem; /* Spacing for social icons */
+  }
+  
+  .footer .text-center {
+    text-align: center;
+  }
+  

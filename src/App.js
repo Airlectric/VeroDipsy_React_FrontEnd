@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { CssBaseline, Container } from '@material-ui/core';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -8,11 +7,12 @@ import Products from './pages/Products';
 import Lookbook from './pages/Lookbook';
 import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
+import { Container } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   return (
     <BrowserRouter>
-      <CssBaseline />
       <Header />
       <Container>
         <Routes>

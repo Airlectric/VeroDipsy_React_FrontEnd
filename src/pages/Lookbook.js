@@ -1,34 +1,19 @@
 import React from 'react';
 import LookbookCarousel from '../components/LookbookCarousel';
-import { Typography } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    textAlign: 'center',
-    padding: '2rem',
-    [theme.breakpoints.down('sm')]: {
-      padding: '1rem',
-    },
-  },
-  heading: {
-    marginBottom: '2rem',
-    [theme.breakpoints.down('sm')]: {
-      fontSize: '1.5rem',
-    },
-  },
-}));
+import { Container, Row, Col } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Lookbook = () => {
-  const classes = useStyles();
   return (
-    <div className={classes.root}>
-      <Typography variant="h4" className={classes.heading} gutterBottom>
-        Lookbook
-      </Typography>
+    <Container className="text-center py-4">
+      <Row className="mb-4">
+        <Col>
+          <h4>Lookbook</h4>
+        </Col>
+      </Row>
       <LookbookCarousel />
-    </div>
+    </Container>
   );
-}
+};
 
 export default Lookbook;

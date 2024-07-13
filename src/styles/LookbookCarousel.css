@@ -1,0 +1,23 @@
+/* LookbookCarousel.css */
+.carousel-container {
+    width: 100%;
+    max-width: 1200px; /* Adjust the max width as needed */
+    margin: 0 auto;
+  }
+  
+  .carousel-image {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the image covers the entire area */
+    transition: transform 0.3s ease; /* Animation effect */
+  }
+  
+  .carousel-image:hover {
+    transform: scale(1.05); /* Zoom effect on hover */
+  }
+  
+  /* Optional: Set a specific height for a uniform look */
+  .carousel-image {
+    height: 700px; /* Set a fixed height */
+  }
+  

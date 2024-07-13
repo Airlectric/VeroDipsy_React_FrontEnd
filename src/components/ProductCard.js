@@ -1,39 +1,18 @@
 import React from 'react';
-import { Card, CardContent, CardMedia, Typography, Button } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
-
-const useStyles = makeStyles({
-  card: {
-    maxWidth: 345,
-  },
-  media: {
-    height: 200,
-  },
-});
+import { Card, Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../styles/ProductCard.css'; // Create a separate CSS file for styling
 
 const ProductCard = ({ product }) => {
-  const classes = useStyles();
   return (
-    <Card className={classes.card}>
-      <CardMedia
-        className={classes.media}
-        image={product.image}
-        title={product.name}
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="h2">
-          {product.name}
-        </Typography>
-        <Typography variant="body2" color="textSecondary" component="p">
-          {product.description}
-        </Typography>
-        <Typography variant="h6">
-          ${product.price}
-        </Typography>
-        <Button size="small" color="primary">
-          View Details
-        </Button>
-      </CardContent>
+    <Card className="product-card">
+      <Card.Img variant="top" src={product.image} alt={product.name} style={{ height: '200px', objectFit: 'cover' }} />
+      <Card.Body>
+        <Card.Title>{product.name}</Card.Title>
+        <Card.Text>{product.description}</Card.Text>
+        <Card.Text><strong>${product.price}</strong></Card.Text>
+        <Button variant="primary" size="sm">View Details</Button>
+      </Card.Body>
     </Card>
   );
 };

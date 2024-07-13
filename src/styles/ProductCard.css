@@ -1,0 +1,12 @@
+/* ProductCard.css */
+.product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for smooth effect */
+    cursor: pointer; /* Indicate that the card is interactive */
+  }
+  
+  .product-card:hover,
+  .product-card:focus {
+    transform: translateY(-10px); /* Move the card up on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+  }
+  

@@ -1,0 +1,13 @@
+/* Header.css */
+.navbar {
+    background: linear-gradient(90deg, rgb(6, 28, 68) 0%, rgba(52, 154, 185, 0.8) 100%);
+  }
+  
+  .nav-link:hover {
+    text-decoration: underline;
+  }
+  
+  .shadow {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
